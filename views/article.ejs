@@ -1,0 +1,19 @@
+<%- include('partials/header') %>
+
+  <section id="product">
+    <article>
+      <img src="../images/coffees/<%= oneCoffeeArticle.reference %>.png" alt="<%= oneCoffeeArticle.name %>">
+      <div>
+        <h2><%= oneCoffeeArticle.name %></h2>
+        <p><strong>Description:</strong> <%= oneCoffeeArticle.description %></p>
+        <p><strong>Référence:</strong> <%= oneCoffeeArticle.reference %></p>
+        <p><strong>Origine:</strong> <%= oneCoffeeArticle.origin %></p>
+        <p><strong>Prix au kilo:</strong> <%= oneCoffeeArticle.price_per_kg %> €</p>
+        <p><strong>Caractéristique principale:</strong> <%= oneCoffeeArticle.caracteristic %></p>
+        <p><strong>Disponible:</strong> <%= oneCoffeeArticle.availability ? 'Oui' : 'Non' %></p>
+      </div>
+    </article>
+    <a href="/catalog" class="btn-container btn-homepage">Retour au catalogue</a>
+  </section>
+
+<%- include('partials/footer') %>

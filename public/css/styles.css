@@ -1,0 +1,361 @@
+/* GENERAL */
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap');
+
+:root {
+  --primary-color: #C67C4E;
+  --primary-color-2: #955D3B;
+  --primary-color-3: #EDD6C8;
+  --background-dark-color: #774A2F;
+  --background-items-color: #EDEDED;
+  --button-text-color: #FFFFFF;
+  --button-background-color: #9c6a4c;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  transition: all .3s;
+  font-family: "DM Sans", serif;
+  background-color: var(--background-dark-color);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+#map {
+  height: 100%;
+  width: 100vw;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+/* HEADER */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 10vh;
+  padding: 2rem;
+}
+
+header > a {
+  display: flex;
+  align-items: center;
+  font-size: 2rem;
+  color: var(--primary-color-3);
+  font-weight: bold;
+}
+
+header img  {
+  height: 3rem;
+  width: auto;
+}
+
+header nav {
+  color: var(--primary-color-3);
+}
+
+header li a {
+  font-size: 1.3rem;
+}
+
+/* BURGER MENU ON SMALL SCREENS */
+header button {
+  background-color: inherit;
+  color: var(--primary-color-3);
+  height: 3rem;
+  padding: 0;
+  border: none;
+  cursor: pointer;
+}
+
+header nav.expanded {
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 80vw;
+  height: 100%;
+  padding: 4rem;
+  gap: 2rem;
+  color: var(--primary-color-3);
+  background-color: var(--background-dark-color);
+  animation: menu-slide-in 0.3s;
+}
+
+@keyframes menu-slide-in {
+  from {
+    width:  0vw;
+    padding: 4rem 0rem;
+  }
+}
+
+header nav.expanded a {
+  color: inherit;
+}
+
+/* PRESENTATION */
+section {
+  padding-top: 8vh;
+  margin: 0 5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+#presentation-container {
+  flex-direction: row-reverse;
+  flex-wrap: nowrap;
+  margin: 0;
+  padding: 5rem;
+}
+
+#presentation-container img {
+  width: 100%;
+}
+
+.section__text-container {
+  text-align: center;
+}
+
+.section__title, .new-arrivals__title {
+  font-size: 2rem;
+  color: var(--primary-color-3);
+}
+
+.section__text__p {
+  font-size: 1.2rem;
+  text-align: justify;
+  color: var(--primary-color-3);
+  padding: 2rem;
+}
+
+/* BUTTONS  */
+button {
+  cursor: pointer;
+}
+
+.btn-container {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  font-weight: 600;
+  transition: all 300ms ease;
+  border-radius: 1rem;
+  border: 1px solid var(--background-dark-color);
+  color: var(--primary-color-2);
+  padding: .8rem 1.5rem;
+  cursor: pointer;
+}
+
+#product .btn-homepage {
+  background-color: var(--primary-color-3);
+  margin-top: 3rem;
+}
+
+/* NEW ARRIVALS */
+#new-arrivals-container {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 2rem;   
+}
+
+#new-arrivals-container img {
+  height: 16rem;
+  width: 100%;
+  object-fit: cover;
+  border-top-left-radius: 0.5rem;
+  border-top-right-radius: 0.5rem;
+}
+
+.new-arrivals__details {
+  display: flex;
+  justify-content: center;
+  padding: 1.5rem 0 0;
+  flex: 1;
+  text-align: center;
+  height: 28vh;
+}
+
+.new-arrivals__text {
+  padding: 1rem;
+}
+
+.new-arrivals__1,
+.new-arrivals__2,
+.new-arrivals__3 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;   
+    justify-content: space-between;
+    margin: 0 1rem;
+    padding: 0 0 1rem 0;
+    border-radius: .5rem;
+    background-color: var(--background-items-color);
+}
+
+/* CATALOGUE */
+#catalog h1 {
+  padding: 4.5rem;
+  background-image: url(../images/coffees/256505890.png);
+  border-radius: 0.5rem;
+  color: var(--primary-color-3);
+  text-align: center;
+  font-size: 2rem;
+}
+
+#catalog .articles {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  margin-top: 5rem;
+}
+
+#catalog .article {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  justify-items: center;
+  object-fit: cover;  
+}
+
+/* Bonus : hide all articles after the 3rd one until the user clicks the button to display more */
+#catalog .only-display-3-articles article:nth-child(n+4) {
+  display: none;
+}
+
+#catalog article, #product article, #shop-container .shop-location {
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+  border-radius: 0.5rem;
+  background-color: var(--primary-color-3);
+}
+
+#product div {
+  padding: 0 2rem 1rem;
+}
+
+#catalog article img {
+  height: 12rem;
+  width: 100%;
+  object-fit: cover;
+  border-top-left-radius: 0.5rem;
+  border-top-right-radius: 0.5rem;
+}
+
+#catalog article div {
+  padding: 2rem;
+  text-align: end;
+}
+
+#catalog article h2 {
+  margin-bottom: 1rem;
+}
+
+#catalog article a {
+  margin-top: 1rem;
+}
+
+#catalog button {
+  margin: 2rem auto 0 auto;
+}
+
+/* PRODUCT (article.ejs) */
+#product h2 {
+  padding: 2rem 0;
+}
+
+#product article img {
+  height: 80%;
+  width: 100%;
+  object-fit: cover;
+}
+
+/* FOOTER */
+footer {
+  padding: 2rem;
+}
+
+footer p {
+  font-weight: 600;
+  text-align: center;
+  color: var(--primary-color-3);
+}
+
+/* 404 */
+#error-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 5rem;
+  color: var(--primary-color-3);
+}
+
+#error-container h1 {
+  font-size: 3.5rem;
+  margin: .5em 0;
+}
+
+#error-container p {
+  font-size: 2rem;
+  padding-bottom: 2rem;
+}
+
+/* SHOP */
+#shop-container {
+  font-size: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
+
+.shop-address {
+  padding: 1.5rem;
+}
+
+.shop-container__text {
+  text-align: center;
+}
+
+.shop-container__text, .shop-form {
+  color: var(--primary-color-3);
+}
+
+.shop-location, .shop-form {
+  width: 100%;
+  max-width: 900px;
+  flex-direction: row;
+}
+
+.shop-location img {
+  width: 100%;
+  height: auto;
+  border-top-left-radius: .5rem;
+  border-top-right-radius: .5rem;
+}
+
+input[type=text], select, textarea {
+  width: 100%;
+  padding: .7rem;
+  border: 1px solid var(--button-background-color);
+  border-radius: 0.5rem;
+  margin: 1rem 0;
+}
+
+textarea {
+  height: 170px;
+}

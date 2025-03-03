@@ -1,0 +1,43 @@
+<%- include("partials/header") %>
+
+  <main id="presentation">
+
+    <section id="presentation-container">
+      <div class="section__pic-container">
+        <img
+          src="/images/about.jpg"
+          alt="Photo de tasses de café alignées en cercle"
+          srcset="/images/about.jpg 900w"
+          sizes="(min-width: 2540px) calc(74.13vw - 733px), calc(62.66vw - 443px)"
+>
+      </div>
+
+      <div class="section__text-container">
+        <h1 class="section__title">Votre spécialiste Haucloquois du café</h1>
+        <p class="section__text__p">
+          oCoffee est un détaillant de café et de produits associés à la consommation du café basé dans la ville de Hauts-de-Cloques. Nous importons nos produits directement des producteurs, et nous les sélectionnons selon des critères exigeants de qualité. oCoffee est reconnu à l’échelle départementale.
+        </p>
+        <div class="btn-container">
+          <button class="btn-container btn-catalogue" onclick="location.href='/catalog'">Voir le catalogue
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <section id="new-arrivals-container">
+      <h1 class="new-arrivals__title">Nouveautés</h1>
+
+      <div class="new-arrivals__details">
+        <% latestCoffeeArticles.forEach((coffee, index) => { %>
+          <div class="new-arrivals__<%= index + 1 %>">
+            <img src="/images/coffees/<%= coffee.reference %>.png" alt="<%= coffee.name %>">
+            <p class="new-arrivals__text"><%= coffee.description %></p>
+            <button class="btn-container btn-new-arrivals"><a href="/article/<%= coffee.id %>">Découvrir</a></button>
+          </div>
+          <% }) %>
+      </div>
+    </section>
+    
+  </main>
+
+<%- include('partials/footer') %>
