@@ -1,3 +1,4 @@
+/* GRAND ÉCRAN - Bureau / Desktop */
 @media screen and (min-width: 1280px) {
   header button {
     display: none;
@@ -19,8 +20,59 @@
     height: auto;
     margin: 0 auto;
   }
+
+   #catalog .articles {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    margin-top: 5rem;
+    padding: 1rem;
+  }
 }
 
+/* ÉCRANS MOYENS - Tablettes / Moyens laptops */
+@media screen and (min-width: 650px) and (max-width: 1279px) {
+  #catalog .articles {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    margin-top: 5rem;
+  }
+}
+
+/* PETITS ÉCRANS - Mobiles, tablettes portrait */
+@media screen and (max-width: 649px) {
+  #catalog .articles {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    margin-top: 5rem;
+  }
+
+  #articles-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+
+  #articles-list article {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  #articles-list.only-display-3-articles {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  #articles-list.only-display-3-articles article {
+    width: 100%;
+  }
+}
+
+/* RESPONSIVE PRÉSENTATION & HEADER (jusqu'à 1279px) */
 @media screen and (max-width: 1279px) {
   #presentation-container img {
     display: none;
@@ -35,7 +87,6 @@
     gap: 2rem;
   }
 
-  /* Hide all menu links on small screen by default */
   header ul {
     display: none;
   }
@@ -65,35 +116,23 @@
   }
 }
 
-@media screen and (max-width: 1278px) {
-  #catalog .articles {
-    display: grid;
-    grid-template-columns: repeat(2,1fr);
-    gap: 1rem;
-    margin-top: 5rem;
-  }
-}
-
-@media screen and (max-width: 650px) {
-  #articles-list {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1rem;
+/* PRÉSENTATION ET CATALOGUE - Mobiles et tablettes portrait */
+@media screen and (max-width: 768px) {
+  #presentation-container {
+    flex-direction: column;
+    padding: 2rem;
   }
 
-  #articles-list article {
-    width: 100%;
-  }
-}
-
-@media screen and (max-width: 450px) {
-  #articles-list.only-display-3-articles {
-    display: grid;
-    grid-template-columns: repeat(1, 1fr);
-    gap: 1rem;
+  .new-arrivals__details {
+    flex-direction: column;
+    height: auto;
   }
 
-  #articles-list.only-display-3-articles article {
-    width: 100%;
+  .new-arrivals__item {
+    margin: 1rem 0;
+  }
+
+  header nav.expanded {
+    width: 100vw;
   }
 }

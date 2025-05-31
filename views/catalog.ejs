@@ -6,13 +6,18 @@
 
     <div class="articles only-display-3-articles" id="articles-list">
       <% allCoffeeData.forEach((coffee) => { %>
-        <article>
-          <img src="../images/coffees/<%= coffee.reference %>.png" alt="<%= coffee.name %>">
-          <div>
+        <article class="catalog-card">
+          <img 
+            src="../images/coffees/<%= coffee.reference %>.png" 
+            alt="<%= coffee.name %>"
+          >
+          <div class="catalog-card-details">
             <h2><%= coffee.name %></h2>
             <p>Origine <%= coffee.origin %></p>
-            <p><%= coffee.price_per_kg %> €</p>
-            <a class="button-outline" href="/article/<%= coffee.id %>">Voir le détail</a>
+            <p><%= coffee.price_per_kg %> € / kg</p>
+            <a class="btn btn-container btn-details" href="/article/<%= coffee.id %>">
+              Voir le détail
+            </a>
           </div>
         </article>
       <% }) %>
