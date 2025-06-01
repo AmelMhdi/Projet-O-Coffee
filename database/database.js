@@ -1,15 +1,7 @@
-import { Pool } from 'pg';
+import pg from 'pg';
 
-const pool = new Pool({
-  connectionString: process.env.DATABASE_URL,
-  ssl: {
-    rejectUnauthorized: false
-  }
-});
+const client = new pg.Client(process.env.PG_URL);
 
-// Important : définir le schéma par défaut
-pool.on('connect', (client) => {
-  client.query('SET search_path TO ocoffee, public');
-});
+await client.connect();
 
-export { pool };
+export default client;
