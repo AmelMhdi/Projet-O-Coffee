@@ -170,15 +170,17 @@ section {
 }
 
 #presentation-container {
-  position: relative;
-  padding: 2rem;
-  background-color: rgba(255, 255, 255, 0.1); 
+   position: relative;
+  padding: 40px;
+  margin: 20px;
+  background-color: rgba(0, 0, 0, 0.1);
   border: 1px solid rgba(255, 255, 255, 0.2);
   border-radius: 15px;
   box-shadow: 
-    0 8px 32px rgba(0, 0, 0, 0.37),
+    0 10px 40px rgba(0, 0, 0, 0.4),
     0 2px 8px rgba(0, 0, 0, 0.2);
-  backdrop-filter: blur(10px); 
+  backdrop-filter: blur(10px);
+  overflow: hidden;
 }
 
 #presentation-container::before {
@@ -272,6 +274,9 @@ button {
   padding: 0 0 1rem 0;
   border-radius: .5rem;
   background-color: var(--background-items-color);
+  box-shadow: 
+    0 10px 40px rgba(0, 0, 0, 0.4),
+    0 2px 8px rgba(0, 0, 0, 0.2);
 }
 
 .new-arrivals__text {
