@@ -1,11 +1,7 @@
-import pkg from 'pg';
-const { Pool } = pkg;
+import pg from 'pg';
 
-const client = new Pool({
-  connectionString: process.env.DATABASE_URL,
-  ssl: {
-    rejectUnauthorized: false, 
-  },
-});
+const client = new pg.Client(process.env.PG_URL);
+
+await client.connect();
 
 export default client;
