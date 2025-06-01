@@ -2,6 +2,9 @@
 
 BEGIN; -- Début d'une transaction : si l'une des commandes est amenée à échouer, alors toutes les commandes, mêmes déjà passées, échoueront. 
 
+CREATE SCHEMA IF NOT EXISTS ocoffee;
+SET search_path TO ocoffee, public;
+
 DROP TABLE IF EXISTS coffeedata;
 
 CREATE TABLE coffeedata (
