@@ -157,14 +157,43 @@ section {
 .section__title,
 .new-arrivals__title {
   font-size: 2rem;
-  color: var(--primary-color-3);
+  color: white;
 }
 
 .section__text__p {
   font-size: 1.2rem;
   text-align: justify;
-  color: var(--primary-color-3);
+  color: white;
   padding: 2rem;
+  line-height: 1.6;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.7);
+}
+
+#presentation-container {
+  position: relative;
+  padding: 2rem;
+  background-color: rgba(255, 255, 255, 0.1); 
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 15px;
+  box-shadow: 
+    0 8px 32px rgba(0, 0, 0, 0.37),
+    0 2px 8px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(10px); 
+}
+
+#presentation-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url('/images/about.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0.4; 
+  z-index: -1;
 }
 
 /* ----------------------------
