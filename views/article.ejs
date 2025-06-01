@@ -1,7 +1,8 @@
 <%- include('partials/header') %>
 
-  <section id="product">
-    <article>
+<section id="product">
+  <article class="product-detail-card">
+    <% if (oneCoffeeArticle) { %>
       <img src="../images/coffees/<%= oneCoffeeArticle.reference %>.png" alt="<%= oneCoffeeArticle.name %>">
       <div>
         <h2><%= oneCoffeeArticle.name %></h2>
@@ -12,8 +13,12 @@
         <p><strong>Caractéristique principale:</strong> <%= oneCoffeeArticle.caracteristic %></p>
         <p><strong>Disponible:</strong> <%= oneCoffeeArticle.availability ? 'Oui' : 'Non' %></p>
       </div>
-    </article>
-    <a href="/catalog" class="btn-container btn-homepage">Retour au catalogue</a>
-  </section>
+    <% } else { %>
+      <p>Aucun article trouvé.</p>
+    <% } %>
+  </article>
+
+  <a href="/catalog" class="btn-container btn-homepage">Retour au catalogue</a>
+</section>
 
 <%- include('partials/footer') %>
